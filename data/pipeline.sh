@@ -1,7 +1,8 @@
 #!/bin/bash
 # Combined 16S + WGS PCoA pipeline
 # Study: QIITA 14549 - Shotgun versus 16S - Museum and Fresh Leopard Frog Guts
-# Author: Annabeth Kharya
+# Author: Ananya Kharya
+# References: 
 
 # Step 1 - add new ID columns to metadata
 awk 'NR==1 {print $0"\tnew_16S_id\tnew_WGS_id"; next} {print $0"\t"$1"_16S\t"$1"_WGS"}' data/frog_metadata.txt > data/metadata_added_cols.tsv
